@@ -63,7 +63,7 @@ namespace WpfApp23
                     String value = row.Название;
                     if (row != null)
                     {
-                        APIMethod1.Delete(row.Код, "api/Plants");
+                        APIMethod1.Delete(row.Код, "api/PlantsController1");
                         loadDB();
                     }
                 }
@@ -88,7 +88,7 @@ namespace WpfApp23
             int selectedIndex = listView.SelectedIndex;
             try
             {
-                listView.ItemsSource = APIMethod1.Get<List<Plant>>("api/Plants");
+                listView.ItemsSource = APIMethod1.Get<List<Plant>>("api/PlantsController1");
             }
             catch (Exception ex)
             {

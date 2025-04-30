@@ -11,7 +11,7 @@ namespace WpfApp23
     internal class APIMethod1
     {
         private static readonly HttpClient _httpClient = new HttpClient();
-        private static readonly string _apiBaseUrl = "http://localhost:7082/";
+        private static readonly string _apiBaseUrl = "http://localhost:5093/";
 
         public static T Get<T>(string endPoint)
         {

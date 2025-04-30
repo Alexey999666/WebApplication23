@@ -24,6 +24,7 @@ namespace WebApplication23.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<User>>> GetUsers()
         {
+            await _context.Roles.LoadAsync();
             return await _context.Users.ToListAsync();
         }
 

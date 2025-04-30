@@ -18,4 +18,6 @@ public partial class User
     public string UserPassword { get; set; } = null!;
 
     public int UserRole { get; set; }
+
+    public virtual Role UserRoleNavigation { get; set; } = null!;
 }

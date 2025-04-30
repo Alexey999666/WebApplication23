@@ -27,24 +27,25 @@
                 <DataTemplate>
                     <Grid>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="250"/>
-                            <ColumnDefinition Width="400"/>
-                            <ColumnDefinition Width="550*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="40"/>
-                            <RowDefinition Height="40"/>
-                            <RowDefinition Height="50*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
 
 
-                        <TextBlock Text="{Binding Код, StringFormat={}Код растения: {0}}" Grid.Row="0" Grid.Column="0" TextAlignment="Right" FontSize="18"/>
+                        <TextBlock Text="{Binding Код, StringFormat={}Код растения: {0}}" Grid.Row="0" Grid.Column="0" TextAlignment="Left" FontSize="18"/>
 
                         <TextBlock Text="{Binding Название, StringFormat={}Название растения: {0}}" Grid.Row="1" Grid.Column="0" TextAlignment="Right" FontSize="18"/>
 
-                        <TextBlock Text="{Binding Семейство, StringFormat={}Семейство: {0}}" Grid.Row="2" Grid.Column="0" TextAlignment="Right" FontSize="18"/>
+                        <TextBlock Text="{Binding Семейство, StringFormat={}Семейство: {0}}" Grid.Row="2" Grid.Column="0" TextAlignment="Left" FontSize="18"/>
 
-                        <TextBlock Text="{Binding Раздел, StringFormat={}Раздел: {0}}" Grid.Row="1" Grid.Column="1" TextAlignment="Right" FontSize="18"/>
+                        <TextBlock Text="{Binding Раздел, StringFormat={}Раздел: {0}}" Grid.Row="3" Grid.Column="0" TextAlignment="Left" FontSize="18"/>
                     </Grid>
                 </DataTemplate>
             </ListView.ItemTemplate>

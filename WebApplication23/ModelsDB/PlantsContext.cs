@@ -38,15 +38,9 @@ public partial class PlantsContext : DbContext
             entity.ToTable("Country");
 
             entity.Property(e => e.Код).ValueGeneratedNever();
-            entity.Property(e => e.Материк)
-                .HasMaxLength(50)
-                .IsFixedLength();
-            entity.Property(e => e.Название)
-                .HasMaxLength(50)
-                .IsFixedLength();
-            entity.Property(e => e.Столица)
-                .HasMaxLength(50)
-                .IsFixedLength();
+            entity.Property(e => e.Материк).HasMaxLength(50);
+            entity.Property(e => e.Название).HasMaxLength(50);
+            entity.Property(e => e.Столица).HasMaxLength(50);
         });
 
         modelBuilder.Entity<Plant>(entity =>
@@ -56,15 +50,9 @@ public partial class PlantsContext : DbContext
             entity.ToTable("Plant");
 
             entity.Property(e => e.Код).ValueGeneratedNever();
-            entity.Property(e => e.Название)
-                .HasMaxLength(50)
-                .IsFixedLength();
-            entity.Property(e => e.Раздел)
-                .HasMaxLength(50)
-                .IsFixedLength();
-            entity.Property(e => e.Семейство)
-                .HasMaxLength(50)
-                .IsFixedLength();
+            entity.Property(e => e.Название).HasMaxLength(50);
+            entity.Property(e => e.Раздел).HasMaxLength(50);
+            entity.Property(e => e.Семейство).HasMaxLength(50);
         });
 
         modelBuilder.Entity<PlantsInCountry>(entity =>
@@ -106,6 +94,11 @@ public partial class PlantsContext : DbContext
             entity.Property(e => e.UserPassword).HasMaxLength(50);
             entity.Property(e => e.UserPatronymic).HasMaxLength(50);
             entity.Property(e => e.UserSurname).HasMaxLength(50);
+
+            entity.HasOne(d => d.UserRoleNavigation).WithMany(p => p.Users)
+                .HasForeignKey(d => d.UserRole)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_User_Role");
         });
 
         OnModelCreatingPartial(modelBuilder);
